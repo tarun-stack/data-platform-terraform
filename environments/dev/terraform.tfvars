@@ -14,7 +14,7 @@ single_nat_gateway = true
 enable_flow_logs = true
 
 # EKS
-admin_iam_arn   = "arn:aws:iam::699651639348:user/terraform-admin"
+admin_iam_arn   = "arn:aws:iam::000000000000:user/terraform-admin"
 cluster_version = "1.32"
 node_groups = {
   primary = {
