@@ -72,7 +72,7 @@ module "iam_roles" {
   environment      = var.environment
   aws_region       = var.aws_region
   eks_cluster_name = "${var.project_name}-${var.environment}-eks"
-  github_org       = "sarangtagad-git"
+  github_org       = "tarun-stack"
   github_repo      = "data-platform-terraform"
   tags             = var.tags
 }
