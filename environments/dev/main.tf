@@ -30,6 +30,16 @@ provider "kubernetes" {
     args        = ["eks", "get-token", "--cluster-name", module.eks.cluster_name, "--region", var.aws_region]
   }
 }
+# =============================================================================
+# Data Sources & Locals
+# =============================================================================
+data "aws_caller_identity" "current" {}
+
+locals {
+  admin_iam_arn = var.admin_iam_arn != null ? var.admin_iam_arn : (
+    "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/terraform-admin"
+  )
+}
 
 # =============================================================================
 # Networking
