@@ -5,7 +5,10 @@ variable "project_name" {
   description = "Name of the project"
   type        = string
 }
-
+variable "admin_iam_arn" {
+  type    = string
+  default = null   # if null, we'll look it up
+}
 variable "environment" {
   description = "Deployment environment"
   type        = string
